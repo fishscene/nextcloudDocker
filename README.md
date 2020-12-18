@@ -1,8 +1,8 @@
-# nextcloudDocker
+# NextcloudDocker
 2020/12/18: A quick 'n dirty tutorial for getting nextcloud set up using portainer, docker, and nginx.
 
 
-# Portainer Stack
+## Portainer Stack
 - Remove ANY AND ALL TABS and replace with spaces. Always 2 spaces, never 1, or 3: 
 
       version: '2'
@@ -40,7 +40,7 @@
             - trusted_domains=(ip_address of portainer host, no http/https) (url, no http/https) (url, no http/https etc...)
           restart: unless-stopped
 
-NGINX-MANAGER Web Proxy with SSL
+### NGINX-MANAGER Web Proxy with SSL
 - DETAILS
 
       -- Scheme: http
@@ -65,7 +65,7 @@ NGINX-MANAGER Web Proxy with SSL
       -- HSTS Subdomains: Enable
 
 
-NEXTCLOUD WEBPAGE SETUP
+### NEXTCLOUD WEBPAGE SETUP
 - Storage and Database > select MySQL/MariaDB
 
       -- Database user --> "nextcloud"
@@ -73,7 +73,8 @@ NEXTCLOUD WEBPAGE SETUP
       -- Database name --> "nextcloud"
       -- localhost host --> "mariadb"
 
-ALLOW TRUSTED DOMAINS
+
+### ALLOW TRUSTED DOMAINS
 - Enter in to the nextcloud container console:
 
       apt-get update
@@ -84,15 +85,17 @@ ALLOW TRUSTED DOMAINS
       array (
         0 => '(url, no http/https)',
       ),
-  
-ENABLE SMB/CIFS in Nextcloud:
+- Restart Nextcloud docker container
+
+
+### ENABLE SMB/CIFS in Nextcloud:
 - Enter in to the nextcloud container console:
 
       apt-get update && apt-get install smbclient
 - Restart Nextcloud docker container
 
 
-ENABLE TALK:
+### ENABLE TALK:
 - Enter in to the nextcloud container console:
 
       nano /var/www/html/config/config.php
@@ -101,4 +104,3 @@ ENABLE TALK:
       'forcessl' => true,
       'overwriteprotocol' => 'https',
 - Restart Nextcloud docker container
-
