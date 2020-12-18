@@ -37,7 +37,7 @@
             - nextcloud:/var/www/html
           environment:
             - TZ=America/Los_Angeles
-            - trusted_domains=(ip_address of portainer host) (url) (url etc...)
+            - trusted_domains=(ip_address of portainer host, no http/https) (url, no http/https) (url, no http/https etc...)
           restart: unless-stopped
 
 NGINX-MANAGER Web Proxy with SSL
