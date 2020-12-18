@@ -2,7 +2,7 @@
 2020/12/18: A quick 'n dirty tutorial for getting nextcloud set up using portainer, docker, and nginx.
 
 
-## Portainer Stack
+## Portainer Stack docker-compose
 - Remove ANY AND ALL TABS and replace with spaces. Always 2 spaces, never 1, or 3: 
 
       version: '2'
@@ -68,10 +68,10 @@
 ### NEXTCLOUD WEBPAGE SETUP
 - Storage and Database > select MySQL/MariaDB
 
-      -- Database user --> "nextcloud"
-      -- Database password --> password which has been specified in the docker-compose file with MYSQL_ROOT_PASSWORD
-      -- Database name --> "nextcloud"
-      -- localhost host --> "mariadb"
+      -- Database user: nextcloud
+      -- Database password: (password which has been specified in the docker-compose file with MYSQL_ROOT_PASSWORD)
+      -- Database name: nextcloud
+      -- localhost host: mariadb
 
 
 ### ALLOW TRUSTED DOMAINS
